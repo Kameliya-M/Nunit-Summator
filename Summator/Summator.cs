@@ -18,10 +18,12 @@ namespace Summator
             }
             return sum;
         }
+        // Here is the sample test
         public static void Test_SumTwoNumbers()
         {
-            if(Sum(new int[] { 1, 2,}) !=3)
-            { throw new Exception("1+2 !=3");
+            if (Sum(new int[] { 1, 2 }) != 3)
+            {
+                throw new Exception("1+2 !=3");
             }
             else
             {
