@@ -9,7 +9,7 @@ namespace Summator.UnitTests
             var nums = new int[] { 1, 2 };
             var actual = Summator.Sum(nums);
 
-            var expected = 4;
+            var expected = 3;
 
             Assert.AreEqual(expected, actual);
         }
@@ -43,6 +43,17 @@ namespace Summator.UnitTests
             var actual = Summator.Sum(nums);
 
             var expected = 0;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+
+        public void Test_Summator_BigNumbers()
+        {
+            var nums = new int[] { 2000000000, 2000000000, 2000000000 };
+            var actual = Summator.Sum(nums);
+
+            var expected = 6000000000;
 
             Assert.AreEqual(expected, actual);
         }

@@ -8,25 +8,26 @@ namespace Summator
 {
     public static class Summator
     {
-        public static int Sum(int[] arr)
+        public static long Sum(int[] arr)
         {
-            int sum = arr[0];
-            for (int i = 1; i < arr.Length; i++)
+            long sum = 0;
+            for (long i = 0; i < arr.Length; i++)
             {
                 sum += arr[i];
 
             }
             return sum;
         }
-        public static void Test_SumTwoNumbers()
+        public static double Average(int[] arr)
         {
-            if(Sum(new int[] { 1, 2,}) !=3)
-            { throw new Exception("1+2 !=3");
-            }
-            else
+            double sum = 0;
+            for (long i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine("Test Pass!");
+                sum += arr[i];
+
             }
+            return sum / arr.Length;
         }
     }
-}
+    }
+
