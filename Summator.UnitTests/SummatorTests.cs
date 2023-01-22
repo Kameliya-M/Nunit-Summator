@@ -57,6 +57,33 @@ namespace Summator.UnitTests
 
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+
+        public void Test_Summator_ThreePositiveNumbers()
+        {
+            //Arrange
+            var nums = new int[] { 1, 2, 88 };
+            var expected = 91;
+
+            //Act
+
+            var actual = Summator.Sum(nums);
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void Test_Average_ThreeNumbers()
+        {
+            
+            var nums = new int[] { 1, 3, 5 };
+            double expected = 3;
+
+            var actual = Summator.Average(nums);
+
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
  
