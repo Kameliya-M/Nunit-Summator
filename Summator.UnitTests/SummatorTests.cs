@@ -96,7 +96,21 @@ namespace Summator.UnitTests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+        [Test]
+        public void Test_Multiply_TwoNumbers()
+        {
+
+            var nums = new double[] { 3, 2 };
+            double expected = 6;
+
+            var actual = Summator.Multiply(nums);
+
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
+
+
 
 }
  
