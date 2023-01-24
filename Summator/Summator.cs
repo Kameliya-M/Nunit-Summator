@@ -28,6 +28,23 @@ namespace Summator
             }
             return sum / arr.Length;
         }
+        public static double Multiply(double[] arr)
+        {
+            double result = 0;
+
+            if (arr.Length > 0)
+            {
+                result = arr[0];
+            }
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                result *= arr[i];
+            }
+
+            return result;
+        }
     }
     }
 
