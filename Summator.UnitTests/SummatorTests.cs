@@ -84,7 +84,20 @@ namespace Summator.UnitTests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+        [Test]
+        public void Test_Average_TwoNumbers()
+        {
+
+            var nums = new int[] { 1, 2 };
+            double expected = 1.5;
+
+            var actual = Summator.Average(nums);
+
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
+
 }
  
     
