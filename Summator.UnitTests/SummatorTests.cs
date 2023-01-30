@@ -75,7 +75,7 @@ namespace Summator.UnitTests
         [Test]
         public void Test_Average_ThreeNumbers()
         {
-            
+
             var nums = new int[] { 1, 3, 5 };
             double expected = 3;
 
@@ -108,10 +108,21 @@ namespace Summator.UnitTests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+
+        [TestCase(new int[] { 1, 2 }, 3)]
+        [TestCase(new int[] {1}, 1)]
+        [TestCase(new int[] { -3, -8 }, -11)]
+        [TestCase(new int[] { 5, 0 }, 5)]
+        [TestCase(new int[] {}, 0)]
+        public void Test_Summator_SumDDT(int[] values, long expected)
+        {
+            var actual = Summator.Sum(values);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
     }
-
-
-
 }
  
     
