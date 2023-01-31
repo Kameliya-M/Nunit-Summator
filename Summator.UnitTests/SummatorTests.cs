@@ -26,6 +26,16 @@ namespace Summator.UnitTests
         }
         [Test]
 
+        public void Test_Summator_OneNegative_OnePositive_Numbers()
+        {
+            var nums = new int[] { 1, -1 };
+            var actual = Summator.Sum(nums);
+
+            var expected = 0;
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+
         public void Test_Summator_OneNumber()
         {
             var nums = new int[] { 6 };
@@ -97,7 +107,7 @@ namespace Summator.UnitTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         [Test]
-        public void Test_Multiply_TwoNumbers()
+        public void Test_Multiply_TwoPositiveNumbers()
         {
 
             var nums = new double[] { 3, 2 };
@@ -108,13 +118,37 @@ namespace Summator.UnitTests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+        [Test]
+        public void Test_Multiply_OneNegative_OnePositive_Numbers()
+        {
 
+            var nums = new double[] { 3, -5 };
+            double expected = -15;
+
+            var actual = Summator.Multiply(nums);
+
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void Test_Multiply_TwoNegative_Numbers()
+        {
+
+            var nums = new double[] { -3, -5 };
+            double expected = 15;
+
+            var actual = Summator.Multiply(nums);
+
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
 
         [TestCase(new int[] { 1, 2 }, 3)]
         [TestCase(new int[] {1}, 1)]
         [TestCase(new int[] { -3, -8 }, -11)]
         [TestCase(new int[] { 5, 0 }, 5)]
         [TestCase(new int[] {}, 0)]
+        [TestCase(new int[] { 1, -1 }, 0)]
         public void Test_Summator_SumDDT(int[] values, long expected)
         {
             var actual = Summator.Sum(values);
@@ -122,6 +156,14 @@ namespace Summator.UnitTests
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+        [TestCase(new double[] {3, 2 }, 6)]
+        [TestCase(new double[] {3, -5 }, -15)]
+        [TestCase(new double[] {-3, -5 }, 15)]
+        public void Test_Multiply_SumDDT(double[] values, long expected)
+        {
+            var actual = Summator.Multiply(values);
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
  
